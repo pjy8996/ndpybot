@@ -10,7 +10,7 @@ const byeChannelComment = "안녕히가세요.";
 
 client.on('ready', () => {
   console.log('켰다.');
-  client.user.setPresence({ game: { name: '!도움\nAirk Gy ER#7777 제작 ' }, status: 'online' })
+  client.user.setPresence({ game: { name: '!도움\nAirk Gy ER#7777 제작' }, status: 'online' })
 });
 
 client.on("guildMemberAdd", (member) => {
@@ -74,7 +74,7 @@ client.on('message', (message) => {
     let embed = new Discord.RichEmbed()
       .setTitle('타이틀')
       .setURL('http://www.naver.com')
-      .setAuthor('나긋해', img, 'http://www.naver.com')
+      .setAuthor('곰용', img, 'http://www.naver.com')
       .setThumbnail(img)
       .addBlankField()
       .addField('Inline field title', 'Some value here')
@@ -84,14 +84,14 @@ client.on('message', (message) => {
       .addField('Inline field title', 'Some value here1\nSome value here2\nSome value here3\n')
       .addBlankField()
       .setTimestamp()
-      .setFooter('나긋해가 만듬', img)
+      .setFooter('AIRK GY ER#7777제작', img)
 
     message.channel.send(embed)
   } else if(message.content == '!도움') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
       {name: '!도움', desc: '곰용 봇 도움말'},
-      {name: 'ping', desc: '현재 핑 상태'},
+      {name: '!핑', desc: '현재 핑 상태'},
       {name: 'embed', desc: 'embed 예제1'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
       {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
