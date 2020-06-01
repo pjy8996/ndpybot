@@ -103,7 +103,7 @@ client.on('message', (message) => {
     let embed = new Discord.RichEmbed()
       .setAuthor('도움말 곰용 BOT', helpImg)
       .setColor('#186de6')
-      .setFooter(`곰용 BOT ❤️`)
+      .setFooter(`곰용 BOT ❤`)
       .setTimestamp()
     
     commandList.forEach(x => {
@@ -139,7 +139,6 @@ client.on('message', (message) => {
         }
       })
   } else if(message.content.startsWith('!전체공지2')) {
-    if(checkPermission(message)) return
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!전체공지2'.length);
       let embed = new Discord.RichEmbed()
@@ -160,7 +159,6 @@ client.on('message', (message) => {
       return message.reply('채널에서 실행해주세요.');
     }
   } else if(message.content.startsWith('!전체공지')) {
-    if(checkPermission(message)) return
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!전체공지'.length);
       message.member.guild.members.array().forEach(x => {
