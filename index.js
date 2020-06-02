@@ -70,22 +70,31 @@ client.on('message', (message) => {
     message.channel.send(embed);
   }
 
-  if(message.content == 'embed') {
+  if(message.content == '!봇 재시작') {
     let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
     let embed = new Discord.RichEmbed()
-      .setTitle('타이틀')
-      .setURL('http://www.naver.com')
-      .setAuthor('나긋해', img, 'http://www.naver.com')
-      .setThumbnail(img)
-      .addBlankField()
-      .addField('Inline field title', 'Some value here')
-      .addField('Inline field title', 'Some value here', true)
-      .addField('Inline field title', 'Some value here', true)
-      .addField('Inline field title', 'Some value here', true)
-      .addField('Inline field title', 'Some value here1\nSome value here2\nSome value here3\n')
-      .addBlankField()
-      .setTimestamp()
-      .setFooter('나긋해가 만듬', img)
+// at the top of your file
+const Discord = require('discord.js');
+
+// inside a command, event listener, etc.
+const exampleEmbed = new Discord.MessageEmbed()
+	.setColor('#00ffff')
+	.setTitle('곰용봇 재시작 메뉴')
+	.setURL('https://discord.js.org/')
+	.setAuthor('곰용봇 재시작 완료!', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+	.setDescription('Discord.JS')
+	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+	.addFields(
+		{ name: 'HEROKU 호스팅 상태', value: '**호스팅 정상 작동 완료!**' },
+		{ name: '\u200B', value: '\u200B' },
+		{ name: 'Discord.js', value: '상태 : 정상\n수신 : 양호', inline: true },
+		{ name: 'PYcharm', value: '상태 : 정상\n수신 : 양호', inline: true },
+	)
+  .addField('NODE.js', '상태 : 정상\n수신 : 양호', false)
+  .addField('PYthon', '상태 : 정상\n수신 : 양호', true)
+	.setImage('https://i.imgur.com/wSTFkRM.png')
+	.setTimestamp()
+	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
 
 channel.send(exampleEmbed);
 
@@ -214,14 +223,12 @@ channel.send(exampleEmbed);
   }
 });
 
-function checkPermission(message) {
   if(!message.member.hasPermission("MANAGE_MESSAGES")) {
     message.channel.send(`<@${message.author.id}> ` + "명령어를 수행할 관리자 권한을 소지하고 있지않습니다.")
     return true;
   } else {
     return false;
   }
-}
 
 function changeCommandStringLength(str, limitLen = 8) {
   let tmp = str;
