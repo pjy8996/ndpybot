@@ -86,6 +86,7 @@ client.on('message', (message) => {
       .addField('PYcharm', '상태 : 빌드성공!\n수신 : 양호', true)
       .addField('호스팅 상태', 'HEROKU호스팅 서비스 : 수신 | 양호\nAWS호스팅 서비스 : 수신 | 양호\nAzure호스팅 서비스 : 수신 | 양호')
       .addBlankField()
+      .setImage('https://i.imgur.com/wSTFkRM.png')
       .setTimestamp()
       .setFooter('곰용봇 재시작 메뉴', 'https://i.imgur.com/wSTFkRM.png');
 
