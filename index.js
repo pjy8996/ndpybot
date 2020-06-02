@@ -70,7 +70,7 @@ client.on('message', (message) => {
     message.channel.send(embed);
   }
 
-  if(message.content == 'embed') {
+  if(message.content == '!봇 재시작') {
     let img = 'https://cdn.discordapp.com/attachments/716485518778564618/717260766302044200/download20200504193638.png';
     let embed = new Discord.RichEmbed()
       .setTitle('곰용 봇 재시작 완료!')
