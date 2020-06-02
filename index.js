@@ -73,10 +73,9 @@ client.on('message', (message) => {
   if(message.content == 'embed') {
     let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
     let embed = new Discord.RichEmbed()
-      .setColor('#00FFff')
-      .setTitle('곰용 GY 봇 재시작 완료!')
+      .setTitle('타이틀')
       .setURL('http://www.naver.com')
-      .setAuthor('곰용봇 재시작 메뉴!', img, 'https://i.imgur.com/wSTFkRM.png')
+      .setAuthor('나긋해', img, 'http://www.naver.com')
       .setThumbnail(img)
       .addBlankField()
       .addField('Inline field title', 'Some value here')
@@ -86,7 +85,7 @@ client.on('message', (message) => {
       .addField('Inline field title', 'Some value here1\nSome value here2\nSome value here3\n')
       .addBlankField()
       .setTimestamp()
-      .setFooter('곰용봇 재시작 메뉴', img)
+      .setFooter('나긋해가 만듬', img)
 
     message.channel.send(embed)
   } else if(message.content == '!도움') {
