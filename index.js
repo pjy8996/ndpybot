@@ -73,6 +73,7 @@ client.on('message', (message) => {
   if(message.content == '!봇 재시작') {
     let img = 'https://cdn.discordapp.com/attachments/716485518778564618/717260766302044200/download20200504193638.png';
     let embed = new Discord.RichEmbed()
+      .setColor('#00ffff')
       .setTitle('곰용 봇 재시작 완료!')
       .setURL('https://discord.com/oauth2/authorize?client_id=715540963321446412&scope=bot')
       .setAuthor('곰용봇 재시작 메뉴!', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.com/oauth2/authorize?client_id=715540963321446412&scope=bot')
@@ -80,13 +81,13 @@ client.on('message', (message) => {
       .setThumbnail(img)
       .addBlankField()
       .addField('Discord.js', '상태 : 좋음\n수신 : 양호')
-      .addField('NODE.js', '상태 : 좋음\n수신 : 양호', false)
+      .addField('NODE.js', '상태 : 빌드성공!\n수신 : 양호', true)
       .addField('PYthon', '상태 : 좋음\n수신 : 양호', true)
-      .addField('PYcharm', '상태 : 좋음\n수신 : 양호', false)
-      .addField('호스팅 상태', 'HEROKU호스팅 서비스 : 수신 | 양호\nAWS호스팅 서비스 : 수신 | 양호\nAzure호스팅 서비스 : 수신 | ')
+      .addField('PYcharm', '상태 : 빌드성공!\n수신 : 양호', true)
+      .addField('호스팅 상태', 'HEROKU호스팅 서비스 : 수신 | 양호\nAWS호스팅 서비스 : 수신 | 양호\nAzure호스팅 서비스 : 수신 | 양호')
       .addBlankField()
       .setTimestamp()
-      .setFooter('곰용봇 재시작 메뉴', img)
+      .setFooter('곰용봇 재시작 메뉴', 'https://i.imgur.com/wSTFkRM.png');
 
     message.channel.send(embed)
   } else if(message.content == '!도움') {
