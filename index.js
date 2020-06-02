@@ -33,6 +33,7 @@ client.on("guildMemberRemove", (member) => {
 
 client.on('message', (message) => {
   if(message.author.bot) return;
+  
 
   if(message.content == 'ping') {
     return message.reply('pong');
@@ -69,22 +70,31 @@ client.on('message', (message) => {
     message.channel.send(embed);
   }
 
-  if(message.content == 'embed') {
-    let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
-    let embed = new Discord.RichEmbed()
-      .setTitle('타이틀')
-      .setURL('http://www.naver.com')
-      .setAuthor('곰용', img, 'http://www.naver.com')
-      .setThumbnail(img)
-      .addBlankField()
-      .addField('Inline field title', 'Some value here')
-      .addField('Inline field title', 'Some value here', true)
-      .addField('Inline field title', 'Some value here', true)
-      .addField('Inline field title', 'Some value here', true)
-      .addField('Inline field title', 'Some value here1\nSome value here2\nSome value here3\n')
-      .addBlankField()
-      .setTimestamp()
-      .setFooter('AIRK GY ER#7777제작', img)
+// at the top of your file
+const Discord = require('discord.js');
+
+// inside a command, event listener, etc.
+const exampleEmbed = new Discord.MessageEmbed()
+	.setColor('#00ffff')
+	.setTitle('봇 재시작 완료!')
+	.setURL('https://discord.js.org/')
+	.setAuthor('곰용 GY 봇 재시작', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+	.setDescription('Some description here')
+	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+	.addFields(
+    { name: 'Discrod.js', value: '빌드완료 !' },
+    { name: 'PyCharm Edu', value: '빌드완료 !', inline: false },
+		{ name: '\u200B', value: '\u200B' },
+		{ name: 'Discord.js', value: '호스팅 연결 상태 : 양호', inline: true },
+		{ name: 'PyCharm Edu', value: '호스팅 연결 상태 : 연결되지 않음', inline: true },
+	)
+  .addField('heroku', '연결상태 : 양호', true)
+  .addField('Node.js', '연결상태 : 양호', false)
+	.setImage('https://i.imgur.com/wSTFkRM.png')
+	.setTimestamp()
+	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+
+channel.send(exampleEmbed);
 
     message.channel.send(embed)
   } else if(message.content == '!도움') {
@@ -209,7 +219,7 @@ client.on('message', (message) => {
         .catch(console.error)
     }
   }
-});
+));
 
 function checkPermission(message) {
   if(!message.member.hasPermission("MANAGE_MESSAGES")) {
