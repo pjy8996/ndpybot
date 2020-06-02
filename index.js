@@ -94,7 +94,7 @@ const exampleEmbed = new Discord.MessageEmbed()
   .addField('PYthon', '상태 : 정상\n수신 : 양호', true)
 	.setImage('https://i.imgur.com/wSTFkRM.png')
 	.setTimestamp()
-	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+	.setFooter('봇 제작 : AIRK Gy ER#7777', 'https://i.imgur.com/wSTFkRM.png');
 
 channel.send(exampleEmbed);
 
@@ -222,6 +222,15 @@ channel.send(exampleEmbed);
     }
   }
 });
+
+function checkPermission(message) {
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) {
+    message.channel.send(`<@${message.author.id}> ` + "명령어를 수행할 관리자 권한을 소지하고 있지않습니다.")
+    return true;
+  } else {
+    return false;
+  }
+}
 
 function changeCommandStringLength(str, limitLen = 8) {
   let tmp = str;
