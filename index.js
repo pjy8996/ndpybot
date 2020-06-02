@@ -71,30 +71,27 @@ client.on('message', (message) => {
   }
 
   if(message.content == '!봇 재시작') {
-    let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
-    let embed = new Discord.RichEmbed()
 // at the top of your file
 const Discord = require('discord.js');
 
 // inside a command, event listener, etc.
 const exampleEmbed = new Discord.MessageEmbed()
-	.setColor('#00ffff')
-	.setTitle('곰용봇 재시작 메뉴')
+	.setColor('#0099ff')
+	.setTitle('Some title')
 	.setURL('https://discord.js.org/')
-	.setAuthor('곰용봇 재시작 완료!', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-	.setDescription('Discord.JS')
+	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+	.setDescription('Some description here')
 	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
 	.addFields(
-		{ name: 'HEROKU 호스팅 상태', value: '**호스팅 정상 작동 완료!**' },
+		{ name: 'Regular field title', value: 'Some value here' },
 		{ name: '\u200B', value: '\u200B' },
-		{ name: 'Discord.js', value: '상태 : 정상\n수신 : 양호', inline: true },
-		{ name: 'PYcharm', value: '상태 : 정상\n수신 : 양호', inline: true },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
 	)
-  .addField('NODE.js', '상태 : 정상\n수신 : 양호', false)
-  .addField('PYthon', '상태 : 정상\n수신 : 양호', true)
+	.addField('Inline field title', 'Some value here', true)
 	.setImage('https://i.imgur.com/wSTFkRM.png')
 	.setTimestamp()
-	.setFooter('봇 제작 : AIRK Gy ER#7777', 'https://i.imgur.com/wSTFkRM.png');
+	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
 
 channel.send(exampleEmbed);
 
