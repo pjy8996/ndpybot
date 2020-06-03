@@ -39,12 +39,12 @@ client.on('message', (message) => {
     return message.reply('pong');
   }
 
-  if(message.content == '!봇 서버') {
+  if(message.content == '!봇SPV') {
     let embed = new Discord.RichEmbed()
     let img = 'https://cdn.discordapp.com/attachments/704981754116833340/715941524751384707/download20200504193638.png';
     var duration = moment.duration(client.uptime).format(" D [일], H [시간], m [분], s [초]");
     embed.setColor('#186de6')
-    embed.setAuthor('server info of 곰용 (GY) BOT', img)
+    embed.setAuthor('곰용 (GY) BOT 시스템 사용량', img)
     embed.setFooter(`곰용 BOT ❤️`)
     embed.addBlankField()
     embed.addField('RAM usage',    `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, true);
@@ -93,11 +93,11 @@ client.on('message', (message) => {
       {name: '!청소', desc: '텍스트 지움'},
       {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
       {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
-      {name: '!봇 서버', desc: '봇의 시스템 사용량 표기'},
+      {name: '!봇SPV', desc: '봇의 시스템 사용량 표기'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
-      .setAuthor('도움말 곰용 BOT', helpImg)
+      .setAuthor('곰용 BOT 도움말', helpImg)
       .setColor('#186de6')
       .setFooter(`곰용 BOT ❤`)
       .setTimestamp()
@@ -138,7 +138,7 @@ client.on('message', (message) => {
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!임베드공지'.length);
       let embed = new Discord.RichEmbed()
-        .setAuthor('공지 곰용 봇')
+        .setAuthor('곰용 봇')
         .setColor('#186de6')
         .setFooter(`곰용 BOT ❤️`)
         .setTimestamp()
