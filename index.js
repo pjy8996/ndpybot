@@ -71,11 +71,13 @@ client.on('message', (message) => {
   }
 
   if(message.content == '!봇 재시작') {
+
     setTimeout(function() {
       console.log('Works!');
     }, 3000);
     
     // &nbsp;3초 후 함수가 실행됨
+    
     let img = 'https://cdn.discordapp.com/attachments/716485518778564618/717260766302044200/download20200504193638.png';
     let embed = new Discord.RichEmbed()
       .setColor('#00ffff')
