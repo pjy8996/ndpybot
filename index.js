@@ -95,6 +95,8 @@ client.on('message', (message) => {
       {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
       {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
       {name: '!봇SPV', desc: '봇의 시스템 사용량 표기'},
+      {name: '!계산 [곱하기, 나누기, 더하기, 빼기] [숫자] [숫자]', desc: '계산기'},
+      
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
