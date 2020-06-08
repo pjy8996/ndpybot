@@ -39,6 +39,14 @@ client.on('message', (message) => {
     return message.reply('pong');
   }
 
+  if(message.content == '!비용') {
+    return message.reply('https://cdn.discordapp.com/attachments/716485518778564618/719372195146760223/EBA98DECB2ADEBB984EC9AA9EC8B9CEBB09CEBB984EC9AA9ECB59CECA285.png');
+  }
+
+  if(message.content == '!비용') {
+    return message.reply('https://cdn.discordapp.com/attachments/716485518778564618/719372195146760223/EBA98DECB2ADEBB984EC9AA9EC8B9CEBB09CEBB984EC9AA9ECB59CECA285.png');
+  }
+
   if(message.content == '!봇SPV') {
     let embed = new Discord.RichEmbed()
     let img = 'https://cdn.discordapp.com/attachments/704981754116833340/715941524751384707/download20200504193638.png';
