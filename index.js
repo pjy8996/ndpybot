@@ -103,7 +103,6 @@ client.on('message', (message) => {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
       {name: '!도움', desc: '곰용 봇 도움말'},
-      {name: '!핑', desc: '현재 핑 상태'},
       {name: '!봇 재시작', desc: '봇을 재시작 합니다'},
       {name: '!일반공지', desc: 'dm으로 전체 공지 보내기'},
       {name: '!임베드공지', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
@@ -111,7 +110,6 @@ client.on('message', (message) => {
       {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
       {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
       {name: '!봇SPV', desc: '봇의 시스템 사용량 표기'},
-      {name: '!계산 [곱하기, 나누기, 더하기, 빼기] [숫자] [숫자]', desc: '계산기'},
       
     ];
     let commandStr = '';
