@@ -14,7 +14,7 @@ client.on('ready', () => {
 
   let state_list = [    '!도움 을 쳐보세요!',    '곰용#7777 제작',    '정상작동',  ]
   let state_list_index = 1;
-  let change_delay = 2000; // 이건 초입니당. 1000이 1초입니당.
+  let change_delay = 1000; // 이건 초입니당. 1000이 1초입니당.
 
   function changeState() {
     setTimeout(() => {
