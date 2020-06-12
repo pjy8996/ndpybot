@@ -3,10 +3,10 @@ const client = new Discord.Client();
 const token = process.argv.length == 2 ? process.env.token : "";
 const moment = require("moment");
 require("moment-duration-format");
-const welcomeChannelName = "👋ㅣ입장하셨습니다";
-const byeChannelName = "✋ㅣ퇴장하셨습니다!";
-const welcomeChannelComment = "어서오세요! 🔴KR/🔵RP ⚡멜론 서버⚡에 오신것을 환영합니다!\n저희서버는 이메일인증 및 서버가입10분후 메세지를 보내실 수 있습니다!\n또는 @1ㅣ👮카이로ㅣ경찰청장 또는 @7ㅣ👮곰용,GYㅣ경찰서장 에게 DM으로 인증을 부탁해 주시면\n몇가지 질문후 권한드리겠습니다.\n멜론서버에 찾아주셔서 진심으로 감사드립니다!";
-const byeChannelComment = "님 안녕히가세요....";
+const welcomeChannelName = "디스코드";
+const byeChannelName = "디스코드";
+const welcomeChannelComment = "님! 안녕하세요!\nICE서버에 오신것을 환영합니다!\n#규칙 에서 규칙을 읽고 활동을 시작해주세요!";
+const byeChannelComment = "님..안녕히가세요 다음에 만나요!";
 
 client.on('ready', () => {
   console.log('켰다.');
