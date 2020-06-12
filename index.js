@@ -10,17 +10,25 @@ const byeChannelComment = "님..안녕히가세요 다음에 만나요!";
 
 client.on('ready', () => {
   console.log('켰다.');
-  client.user.setPresence({ game: { name: '!도움\nAirk Gy ER#7777 제작' }, status: 'online' })
-});
+  client.user.setPresence({ game: { name: '!help를 쳐보세요.' }, status: 'online' })
 
-client.on("guildMemberAdd", (member) => {
-  const guild = member.guild;
-  const newUser = member.user;
-  const welcomeChannel = guild.channels.find(channel => channel.name == welcomeChannelName);
+  let state_list = [    '!도움',    '곰용#7777 제작',    '정상작동',  ]
+  let state_list_index = 1;
+  let change_delay = 3000; // 이건 초입니당. 1000이 1초입니당.
 
-  welcomeChannel.send(`<@${newUser.id}> ${welcomeChannelComment}\n`);
+  function changeState() {
+    setTimeout(() => {
+      console.log( '상태 변경 -> ', state_list[state_list_index] );
+      client.user.setPresence({ game: { name: state_list[state_list_index] }, status: 'online' })
+      state_list_index += 1;
+      if(state_list_index >= state_list.length) {
+        state_list_index = 0;
+      }
+      changeState()
+    }, change_delay);
+  }
 
-  member.addRole(guild.roles.find(role => role.name == "게스트"));
+  changeState();
 });
 
 client.on("guildMemberRemove", (member) => {
