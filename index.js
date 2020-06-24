@@ -75,13 +75,6 @@ client.on('message', (message) => {
     message.channel.send(embed);
   }
 
-  if(message.content == '!핑') {
-    let embed = new Discord.RichEmbed()
-      embed = discord.Embed(colour=0x00fff0)
-      .add_field(name="현재 고묭이의 풍속은.. 읍읍", value='{0} m/s입니다'.format(bot.latency))
-    await ctx.send(embed=embed)
-  }
-
   if(message.content == '!봇 재시작') {
     let img = 'https://cdn.discordapp.com/attachments/716485518778564618/717260766302044200/download20200504193638.png';
     let embed = new Discord.RichEmbed()
