@@ -76,8 +76,9 @@ client.on('message', (message) => {
   }
 
   if(message.content == '!핑') {
-    embed = discord.Embed(colour=0x00fff0)
-    embed.add_field(name="현재 고묭이의 풍속은.. 읍읍", value='{0} m/s입니다'.format(bot.latency))
+    let embed = new Discord.RichEmbed()
+      embed = discord.Embed(colour=0x00fff0)
+      .add_field(name="현재 고묭이의 풍속은.. 읍읍", value='{0} m/s입니다'.format(bot.latency))
     await ctx.send(embed=embed)
   }
 
