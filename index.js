@@ -3,9 +3,9 @@ const client = new Discord.Client();
 const token = process.argv.length == 2 ? process.env.token : "";
 const moment = require("moment");
 require("moment-duration-format");
-const welcomeChannelName = "디스코드";
-const byeChannelName = "디스코드";
-const welcomeChannelComment = "님! 안녕하세요!\nICE서버에 오신것을 환영합니다!\n#규칙 에서 규칙을 읽고 활동을 시작해주세요!";
+const welcomeChannelName = "🎉입장-퇴장🎉";
+const byeChannelName = "🎉입장-퇴장🎉";
+const welcomeChannelComment = "님! 안녕하세요!\n게임디코 서버에 오신것을 환영합니다!\n저희 서버는 보안강도가 __중간__ 으로 설정 되어 있습니다\n이메일인증및, 디스코드 가입 5분이 지나야 합니다!";
 const byeChannelComment = "님..안녕히가세요 다음에 만나요!";
 
 client.on('ready', () => {
@@ -14,7 +14,7 @@ client.on('ready', () => {
 
   let state_list = ['!도움 을 쳐보세요^^','곰용#7777 제작','고묭고묭.......!!','정상작동','고묭! (정상!)...!',]
   let state_list_index = 1;
-  let change_delay = 5000; // 이건 초입니당. 1000이 1초입니당.
+  let change_delay = 3000; // 이건 초입니당. 1000이 1초입니당.
 
   function changeState() {
     setTimeout(() => {
@@ -109,6 +109,7 @@ client.on('message', (message) => {
       {name: '!청소', desc: '텍스트 지움'},
       {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
       {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
+      {name: '!봇SPV', desc: '봇의 시스템 사용량 표기'},
       {name: '!봇SPV', desc: '봇의 시스템 사용량 표기'},
       
     ];
