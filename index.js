@@ -14,7 +14,7 @@ client.on('ready', () => {
 
   let state_list = ['!도움 을 쳐보세요^^','곰용#7777 제작','고묭고묭.......!!','정상작동','고묭! (정상!)...!',]
   let state_list_index = 1;
-  let change_delay = 3000; // 이건 초입니당. 1000이 1초입니당.
+  let change_delay = 3000; // 1000 = 1seconds
 
   function changeState() {
     setTimeout(() => {
@@ -47,14 +47,6 @@ client.on('message', (message) => {
     return message.reply('pong');
   }
 
-  if(message.content == '!비용') {
-    return message.reply('https://cdn.discordapp.com/attachments/716485518778564618/719372195146760223/EBA98DECB2ADEBB984EC9AA9EC8B9CEBB09CEBB984EC9AA9ECB59CECA285.png');
-  }
-
-  if(message.content == '!비용') {
-    return message.reply('https://cdn.discordapp.com/attachments/716485518778564618/719372195146760223/EBA98DECB2ADEBB984EC9AA9EC8B9CEBB09CEBB984EC9AA9ECB59CECA285.png');
-  }
-
   if(message.content == '!봇SPV') {
     let embed = new Discord.RichEmbed()
     let img = 'https://cdn.discordapp.com/attachments/704981754116833340/715941524751384707/download20200504193638.png';
@@ -76,7 +68,7 @@ client.on('message', (message) => {
   }
 
   if(!message.guild) {
-    console.log(message.content)
+    console.log(message.content) 
   }
 
   if(message.content == '!봇 재시작') {
@@ -113,7 +105,6 @@ client.on('message', (message) => {
       {name: '!청소', desc: '텍스트 지움'},
       {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
       {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
-      {name: '!봇SPV', desc: '봇의 시스템 사용량 표기'},
       {name: '!봇SPV', desc: '봇의 시스템 사용량 표기'},
       
     ];
@@ -258,6 +249,22 @@ async function AutoMsgDelete(message, str, delay = 3000) {
     msg.delete();
   }, delay);
 }
+
+  if(message.content.startswith('!역할추가')) {
+    if(message.channel.type == 'dm') {
+      return message.reply('DM에서 사용할 수 없는 명령어 입니다.');
+    }
+    if(message.channel.type != 'DM' && checkPermission(message)) return
+
+    if(message.content.split('<@').length == 3) {
+      if(message.content.split(' ').length!= 3) return;
+
+      var userId = message.content.split(' ')[1].match(/[\u3131-\uD79D^a-zA-Z^0-9]/ugi).join('')
+      var role = message.content.split(' ')[2].match(/[\u3131-\uD79D^a-zA-Z^0-9]/ugi).join('')
+
+      message.member.guild.members.find(x => x.id == userId).addRole(role);
+    }
+  }
 
 
 client.login(token);
